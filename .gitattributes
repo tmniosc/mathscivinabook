@@ -1,0 +1,5 @@
+# Sách PDF là dữ liệu nhị phân: không đổi ký tự xuống dòng, không diff theo dòng
+*.pdf binary
+
+# Tài liệu văn bản dùng LF cho nhất quán giữa các hệ điều hành
+*.md text eol=lf

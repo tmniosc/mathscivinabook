@@ -33,12 +33,12 @@ mathscivinabook/
 
 | Chủ đề | Số sách | Dung lượng |
 |---|---:|---:|
-| `popular_mathematics` | 41 | ~687 MB |
-| `popular_physic` | 24 | ~604 MB |
+| `popular_mathematics` | 41 | ~638 MB |
+| `popular_physic` | 24 | ~439 MB |
 | `olympiad_mathematics` | 2 | ~44 MB |
 | `philosophy` | 2 | ~44 MB |
 | `computer_sciences` | 1 | ~4 MB |
-| **Tổng cộng** | **70** | **~1.4 GB** |
+| **Tổng cộng** | **70** | **~1.15 GB** |
 
 ---
 
@@ -79,7 +79,7 @@ mathscivinabook/
 | 31 | [Phương pháp rèn luyện trí não – Tập 2](<popular_mathematics/k27toanblog-phuongphaprenluyentrinao-tap2.pdf>) | — | 2.4 MB |
 | 32 | [Phương pháp rèn luyện trí não – Tập 3, phần 1](<popular_mathematics/k27toanblog-phuongphaprenluyentrinao-tap3_p1.pdf>) | — | 1.5 MB |
 | 33 | [Phương pháp rèn luyện trí não – Tập 3, phần 2](<popular_mathematics/k27toanblog-phuongphaprenluyentrinao-tap3_p2.pdf>) | — | 1.5 MB |
-| 34 | [Sáng tạo toán học](<popular_mathematics/sangtaotoanhoc.pdf>) | G. Polya | 132.2 MB |
+| 34 | [Sáng tạo toán học](<popular_mathematics/sangtaotoanhoc.pdf>) | G. Polya | 83.1 MB † |
 | 35 | [Sự kỳ diệu của Toán học](<popular_mathematics/Su Ky Dieu Cua Toan Hoc - Theoni Pappas.pdf>) | Theoni Pappas | 20.9 MB |
 | 36 | [Tập 3 – Khẳng định trong phủ định](<popular_mathematics/Tap 3 - Khang dinh trong phu dinh.pdf>) | — | 3.5 MB |
 | 37 | [Thơ cơ khí toán học](<popular_mathematics/Tho Co Khi Toan Hoc - Mark Levi.pdf>) | Mark Levi | 7.8 MB |
@@ -101,7 +101,7 @@ mathscivinabook/
 | 7 | [Giai điệu bí ẩn và con người đã tạo ra vũ trụ](<popular_physic/Giai Điệu Bí Ẩn Và Con Người Đã Tạo Ra Vũ Trụ.pdf>) | Trịnh Xuân Thuận | 6.2 MB |
 | 8 | [Giai điệu dây và bản giao hưởng vũ trụ](<popular_physic/Giai Điệu Dây Và Bản Giao Hưởng Của Vũ Trụ.pdf>) | Brian Greene | 4.8 MB |
 | 9 | [Hạt của Chúa](<popular_physic/Hạt của Chúa.pdf>) | Leon Lederman | 65.9 MB |
-| 10 | [Hiểu biết về khoa học (How Science Works)](<popular_physic/[Ebook] Hiểu Biết Về Khoa Học - How Science Works.pdf>) | — | 254.7 MB |
+| 10 | [Hiểu biết về khoa học (How Science Works)](<popular_physic/[Ebook] Hiểu Biết Về Khoa Học - How Science Works.pdf>) | — | 89.5 MB † |
 | 11 | [Hỗn độn và hài hòa](<popular_physic/Hỗn Độn Và Hài Hòa.pdf>) | Trịnh Xuân Thuận | 3.7 MB |
 | 12 | [Khát vọng tới cái vô hạn](<popular_physic/Khát Vọng Tới Cái Vô Hạn.pdf>) | Trịnh Xuân Thuận | 5.4 MB |
 | 13 | [Mật mã – Từ cổ điển đến lượng tử](<popular_physic/Mật Mã Từ Cổ Điển Đến Lượng Tử.pdf>) | Simon Singh | 2.5 MB |
@@ -138,6 +138,8 @@ mathscivinabook/
 | 1 | [Trí tuệ giả tạo (Artificial Unintelligence)](<computer_sciences/Trí tuệ giả tạo.pdf>) | Meredith Broussard | 4.0 MB |
 
 > **Lưu ý:** cột *Tác giả / Dịch giả* được tổng hợp từ tên tệp và thông tin phổ biến của từng đầu sách. Dấu `—` nghĩa là tên tệp không ghi rõ tác giả. Nếu bạn phát hiện thông tin chưa chính xác, xin mở issue hoặc pull request.
+>
+> **†** Tệp đã được nén lại để lọt giới hạn 100 MB của GitHub — xem [Ghi chú kỹ thuật](#ghi-chú-kỹ-thuật).
 
 ---
 
@@ -149,7 +151,7 @@ mathscivinabook/
 git clone https://github.com/tmniosc/mathscivinabook.git
 ```
 
-> ⚠️ Kho sách nặng khoảng **1.4 GB**. Nếu chỉ cần vài cuốn, hãy tải trực tiếp từng tệp trên giao diện web GitHub (mở tệp PDF → nút **Download**) thay vì clone toàn bộ.
+> ⚠️ Kho sách nặng khoảng **1.15 GB**. Nếu chỉ cần vài cuốn, hãy tải trực tiếp từng tệp trên giao diện web GitHub (mở tệp PDF → nút **Download**) thay vì clone toàn bộ.
 
 ### Tải một thư mục chủ đề (sparse checkout)
 
@@ -180,22 +182,21 @@ Nếu muốn thêm một chủ đề mới (ví dụ `chemistry/`, `biology/`), 
 
 ### Ghi chú kỹ thuật
 
-Một số tệp có dung lượng rất lớn, cần lưu ý khi đẩy lên GitHub:
+GitHub **chặn cứng** mọi tệp lớn hơn 100 MB khi push qua Git thường. Ban đầu có hai cuốn vượt ngưỡng này, nên chúng đã được nén lại:
 
-| Tệp | Dung lượng |
-|---|---:|
-| `popular_physic/[Ebook] Hiểu Biết Về Khoa Học - How Science Works.pdf` | 254.7 MB |
-| `popular_mathematics/sangtaotoanhoc.pdf` | 132.2 MB |
+| Tệp | Trước | Sau |
+|---|---:|---:|
+| `popular_physic/[Ebook] Hiểu Biết Về Khoa Học - How Science Works.pdf` | 254.7 MB | **89.5 MB** |
+| `popular_mathematics/sangtaotoanhoc.pdf` | 132.2 MB | **83.1 MB** |
 
-GitHub **chặn cứng** mọi tệp lớn hơn 100 MB khi push qua Git thường, và cảnh báo với tệp trên 50 MB. Hai tệp trên vì vậy cần được quản lý bằng [Git LFS](https://git-lfs.com/):
+Cả hai đều là **PDF scan thuần ảnh** (mỗi trang là một ảnh JPEG, chiếm 99–100% dung lượng tệp), nên cách nén là giảm độ phân giải và nén lại ảnh JPEG của từng trang:
 
-```bash
-git lfs install
-git lfs track "*.pdf"
-git add .gitattributes
-```
+- *How Science Works* — sách màu minh họa: thu nhỏ còn 65%, JPEG quality 58 (≈ 1420 × 1745 px/trang)
+- *Sáng tạo toán học* — sách chữ đen trắng: thu nhỏ còn 72%, JPEG quality 56 (≈ 1430 × 2020 px/trang)
 
-Lưu ý Git LFS trên tài khoản miễn phí chỉ có 1 GB dung lượng và 1 GB băng thông/tháng. Với kho ~1.4 GB, một phương án thay thế là nén bớt các tệp PDF quá nặng, hoặc lưu trữ chúng trên dịch vụ khác (Google Drive, Internet Archive) và chỉ để liên kết trong README.
+Số trang, kích thước trang và cấu trúc tài liệu được giữ nguyên; chỉ luồng ảnh bên trong bị thay. Ở mức phóng to thông thường, chữ (kể cả dấu tiếng Việt) và hình minh họa vẫn rõ ràng. Nếu bạn cần bản scan gốc độ phân giải đầy đủ, xin mở issue.
+
+Sau khi nén, tệp lớn nhất kho là 95.4 MB — vẫn dưới ngưỡng, nên **không cần Git LFS**. Lưu ý GitHub vẫn hiển thị cảnh báo với tệp trên 50 MB (8 tệp), nhưng đây chỉ là cảnh báo, không chặn push.
 
 ---
 
